@@ -6,6 +6,9 @@
         <el-menu
           default-active="1-4-1"
           class="el-menu-vertical-demo"
+          background-color="#f5f5f5"
+          text-color="#ccc"
+          active-text-color="#ffd04b"
           @open="handleOpen"
           @close="handleClose"
           :collapse="appConfig.menuFold"
@@ -101,4 +104,7 @@ export default {
   border-right: 1px solid #f5f5f5;
   height: calc(100vh - 60px);
 }
+// .el-menu-vertical-demo:not(.el-menu--collapse) {
+//   background-color: chocolate;
+// }
 </style>

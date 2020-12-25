@@ -29,6 +29,33 @@
         </el-color-picker>
       </el-col>
     </el-row>
+
+    <el-row type="flex" justify="space-between">
+      <el-col :span="10">
+        <label for="">菜单文字颜色</label>
+      </el-col>
+     <el-col class="item-reight" :span="12">
+        <el-color-picker
+          @change="changeAppConfig($event,'footerBgc')"
+          v-model="appConfig.footerBgc"
+          size="mini">
+        </el-color-picker>
+      </el-col>
+    </el-row>
+
+    <el-row type="flex" justify="space-between">
+      <el-col :span="10">
+        <label for="">菜单子级背景色</label>
+      </el-col>
+     <el-col class="item-reight" :span="12">
+        <el-color-picker
+          @change="changeAppConfig($event,'footerBgc')"
+          v-model="appConfig.footerBgc"
+          size="mini">
+        </el-color-picker>
+      </el-col>
+    </el-row>
+
     <el-row type="flex" justify="space-between">
       <el-col :span="10">
         <label for="">头部背景</label>
@@ -144,7 +171,7 @@ export default defineComponent({
       value: ''
     }
     // 改变系统配置
-    const changeAppConfig = (e: any, name: string) => {
+    const changeAppConfig = (e: string, name: string) => {
       console.log(`修改系统配置[${name}]为：${e}`)
       obj.name = name
       obj.value = e
