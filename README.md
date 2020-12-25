@@ -1,24 +1,20 @@
-# ts-tem
+# 基于vue3.0/typescript的后台管理系统模板
 
-## Project setup
+## 项目启动及打包
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
+
 ```
 
-### Lints and fixes files
+# 项目进度
+## 第一阶段 2020-12-15前
 ```
-npm run lint
-```
+    1、搭建基础模板
+    2、动态改变头部背景色
+    3、是否固定头部
+    4、是否折叠菜单
+    5、是否显示Logo
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```

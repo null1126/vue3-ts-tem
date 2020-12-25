@@ -1,0 +1,47 @@
+@import "./animation.less";
+
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+img{
+    cursor: pointer;
+}
+
+.item-center{
+    text-align: center;
+}
+
+.item-reight{
+    text-align: right;
+}
+
+.item-left{
+    text-align: left;
+}
+
+.icon-system-fixed{
+    color: darkcyan;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    z-index: 999;
+    // -webkit-transition-property: -webkit-transform;
+    // -webkit-transition-duration: 1s;
+    // -moz-transition-property: -moz-transform;
+    // -moz-transition-duration: 1s;
+    -webkit-animation: rotate 3s linear infinite;
+    -moz-animation: rotate 3s linear infinite;
+    -o-animation: rotate 3s linear infinite;
+    animation: rotate 3s linear infinite;
+}
+

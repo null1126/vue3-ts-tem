@@ -1,30 +1,48 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <router-view v-if="ISReload" />
+
+    <!-- 系统设置 -->
+    <i class="icon-system-fixed el-icon-s-tools" @click="drawer = true"></i>
+    <el-drawer
+      title="系统设置"
+      v-model="drawer"
+      size="20%"
+      direction="rtl"
+    >
+      <system-set></system-set>
+    </el-drawer>
   </div>
-  <router-view/>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script lang='ts'>
+import { ElDrawer } from 'element-plus'
+import { defineComponent } from 'vue'
+import SystemSet from './layout/components/SystemSet.vue'
+export default defineComponent({
+  name: 'App',
+  provide () {
+    return {
+      reload: this.reload
+    }
+  },
+  data () {
+    return {
+      ISReload: true,
+      drawer: false
+    }
+  },
+  components: {
+    ElDrawer,
+    SystemSet
+  },
+  methods: {
+    reload () {
+      this.ISReload = false
+      this.$nextTick(() => {
+        this.ISReload = true
+      })
     }
   }
-}
-</style>
+})
+</script>
