@@ -8,7 +8,7 @@ export default createStore({
   },
   plugins: [
     createPersistedState({
-      storage: window.sessionStorage, // 修改存储的状态
+      storage: window.localStorage, // 修改存储的状态
       paths: ['appConfig'] // 存储的指定的模块的名字（存储某个模块对象）
     })
   ] // 状态持久化

@@ -17,32 +17,32 @@
 
 <script lang='ts'>
 import { ElDrawer } from 'element-plus'
-import { defineComponent } from 'vue'
+import { defineComponent, provide, ref, nextTick } from 'vue'
 import SystemSet from './layout/components/SystemSet.vue'
 export default defineComponent({
   name: 'App',
-  provide () {
-    return {
-      reload: this.reload
+  setup () {
+    const drawer = ref<boolean>(false)
+    const ISReload = ref<boolean>(true)
+    const reload = (): void => {
+      ISReload.value = false
+      console.log('我在刷新~')
+      nextTick(() => {
+        ISReload.value = true
+      })
     }
-  },
-  data () {
+    // 向下传递方法
+    provide('reload', reload)
+
     return {
-      ISReload: true,
-      drawer: false
+      drawer,
+      ISReload,
+      reload
     }
   },
   components: {
     ElDrawer,
     SystemSet
-  },
-  methods: {
-    reload () {
-      this.ISReload = false
-      this.$nextTick(() => {
-        this.ISReload = true
-      })
-    }
   }
 })
 </script>

@@ -1,31 +1,22 @@
 <template>
   <div class="layout">
     <div class="layout-nav">
-      <side-bar />
+      <side-bar></side-bar>
     </div>
-    <!-- 固定头部 -->
-    <div class="layout-body" v-if="appConfig.headerFixed">
-      <header-bar></header-bar>
+    <div class="layout-body">
+      <!-- 固定头部 -->
+      <div height="60px" v-if="appConfig.headerFixed">
+        <header-bar></header-bar>
+      </div>
+      <el-scrollbar wrap-class="scrollbar-wrapper">
+        <!-- 不固定头部 撑满整个盒子-->
       <div class="layout-main">
-        <el-scrollbar wrap-class="scrollbar-wrapper">
-          <div style="height:1000px">
-            都给老子哭
-          </div>
-        </el-scrollbar>
+         <!-- 不固定头部 -->
+        <header-bar v-if="!appConfig.headerFixed"></header-bar>
+        <div style="height:1000px"></div>
       </div>
-      <!-- <footer-bar v-if="showFooter"></footer-bar> -->
-    </div>
-    <!-- 不固定头部 -->
-    <div class="layout-body" v-else>
-      <div class="layout-main" :class="{'headerFixed':!appConfig.headerFixed}">
-        <el-scrollbar wrap-class="scrollbar-wrapper">
-          <header-bar></header-bar>
-          <div style="height:1000px">
-            都给老子哭
-          </div>
-        </el-scrollbar>
-      </div>
-      <!-- <footer-bar v-if="showFooter"></footer-bar> -->
+      </el-scrollbar>
+      <footer-bar v-if="appConfig.showFooter"></footer-bar>
     </div>
   </div>
 </template>
@@ -68,20 +59,16 @@ export default defineComponent({
 }
 
 .layout-body{
+  width: 100%;
   height: 100vh;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .layout-main{
   width: 100%;
-  height: calc(100vh - 60px);
+  flex: 1;
 }
 
-.headerFixed{
-  height: 100vh;
-}
-
-.showFooter{
-  height: calc(100vh - 100px);
-}
 </style>

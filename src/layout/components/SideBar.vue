@@ -1,19 +1,17 @@
 <template>
-  <div class="sideBar" :style="{'width':isSideBarWidth}">
-    <logo v-if="appConfig.showLogo" />
+  <div class="sideBar" :style="{'width':isSideBarWidth,'background-color':appConfig.sideBarBgc}">
+    <logo v-if="appConfig.showLogo"></logo>
     <div class="sideBar-menu">
       <el-scrollbar wrap-class="scrollbar-wrapper">
+        <!-- <side-bar-item></side-bar-item> -->
         <el-menu
-          default-active="1-4-1"
+          :unique-opened="appConfig.uniqueOpened"
           class="el-menu-vertical-demo"
-          background-color="#f5f5f5"
-          text-color="#ccc"
-          active-text-color="#ffd04b"
-          @open="handleOpen"
-          @close="handleClose"
+          :background-color="appConfig.sideBarBgc"
+          :text-color="appConfig.menuTextColor"
+          :active-text-color="appConfig.menuActiveTextColor"
           :collapse="appConfig.menuFold"
         >
-          <!-- <sidebar-item></sidebar-item> -->
           <el-submenu index="1">
       <template #title>
         <i class="el-icon-location"></i>
@@ -42,7 +40,7 @@
     </el-menu-item>
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>
-      <template #title>导航四</template>
+      <template #title>小小虹</template>
     </el-menu-item>
         </el-menu>
       </el-scrollbar>
@@ -51,19 +49,21 @@
 </template>
 
 <script lang='ts'>
-import { ElMenu, ElScrollbar, ElSubmenu, ElMenuItem } from 'element-plus'
+import { ElMenu, ElScrollbar, ElSubmenu, ElMenuItem, ElMenuItemGroup } from 'element-plus'
 import Logo from './Logo.vue'
-import SidebarItem from './SidebarItem.vue'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
+// import SideBarItem from './SideBarItem.vue'
+
 export default {
   name: 'SideBar',
   components: {
     Logo,
-    SidebarItem,
     ElMenuItem,
     ElSubmenu,
     ElMenu,
+    // SideBarItem,
+    ElMenuItemGroup,
     ElScrollbar
   },
   setup () {

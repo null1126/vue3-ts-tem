@@ -1,0 +1,97 @@
+@-webkit-keyframes rotate360 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate360 {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotate360 {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.rotate45 {
+  -webkit-transform: rotate(45deg);
+  /* for Chrome || Safari */
+  -moz-transform: rotate(45deg);
+  /* for Firefox */
+  -ms-transform: rotate(45deg);
+  /* for IE */
+  -o-transform: rotate(45deg);
+  /* for Opera */
+}
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  margin: 0 5px;
+}
+img {
+  cursor: pointer;
+}
+.item-center {
+  text-align: center;
+}
+.item-reight {
+  text-align: right;
+}
+.item-left {
+  text-align: left;
+}
+.box-x-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-x-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.box-x-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-x-se {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.icon-system-fixed {
+  color: darkcyan;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  z-index: 999;
+  -webkit-animation: rotate360 3s linear infinite;
+  -moz-animation: rotate360 3s linear infinite;
+  -o-animation: rotate360 3s linear infinite;
+  animation: rotate360 3s linear infinite;
+}

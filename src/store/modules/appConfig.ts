@@ -1,6 +1,6 @@
 // state
 import ProjectConfig from '../../settings'
-import { IProjectConfig } from '@/types/IProjectConfig'
+
 const state = {
   // 系统状态
   ProjectConfig:ProjectConfig

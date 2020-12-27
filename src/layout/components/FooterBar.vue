@@ -1,5 +1,5 @@
 <template>
-    <div class="footerBar" :style="{ 'background-color':FooterBgc }">
+    <div class="footerBar" :style="{ 'background-color':appConfig.footerBgc }">
        四川聚云众科技有限公司
     </div>
 </template>
@@ -26,7 +26,6 @@ export default defineComponent({
 
 <style lang="less">
 .footerBar {
-  background-color: #ccc;
   color: #333;
   text-align: center;
   line-height: 40px;

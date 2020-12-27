@@ -1,5 +1,5 @@
 <template>
-  <div v-if="true" class="menu-wrapper">
+  <div class="menu-wrapper">
     <!-- <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
@@ -8,7 +8,16 @@
       </app-link>
     </template> -->
 
-    <el-submenu index="1">
+    <el-menu
+          :unique-opened="appConfig.uniqueOpened"
+          class="el-menu-vertical-demo"
+          :background-color="appConfig.sideBarBgc"
+          :text-color="appConfig.menuTextColor"
+          :active-text-color="appConfig.menuActiveTextColor"
+          :collapse="appConfig.menuFold"
+        >
+          <!-- <sidebar-item></sidebar-item> -->
+          <el-submenu index="1">
       <template #title>
         <i class="el-icon-location"></i>
         <span>导航一</span>
@@ -36,8 +45,9 @@
     </el-menu-item>
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>
-      <template #title>导航四</template>
+      <template #title>小小虹</template>
     </el-menu-item>
+        </el-menu>
 
     <!-- <el-submenu ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
@@ -56,7 +66,7 @@
 </template>
 
 <script lang="ts">
-import { ElSubmenu, ElMenuItem } from 'element-plus'
+import { ElMenu, ElSubmenu, ElMenuItem } from 'element-plus'
 import { IRoutersConfig } from '@/types/IProjectConfig'
 import { reactive } from 'vue'
 type IRoutersConfigs = IRoutersConfig[]
@@ -64,31 +74,34 @@ export default {
   name: 'SidebarItem',
   components: {
     ElSubmenu,
+    ElMenu,
     ElMenuItem
-  },
-  setup () {
-    const routerData: IRoutersConfigs = reactive([
-      {
-        id: 1,
-        name: 'home',
-        icon: 'el-icon-location',
-        title: '导航1',
-        num: 1,
-        childList: [
-          {
-            id: 1,
-            name: 'home',
-            icon: 'el-icon-location',
-            title: '导航1',
-            num: 1,
-            childList: []
-          }
-        ]
-      }
-    ])
-
-    console.log(routerData)
   }
+  // setup () {
+  //   const routerData: IRoutersConfigs = reactive([
+  //     {
+  //       id: 1,
+  //       name: 'home',
+  //       icon: 'el-icon-location',
+  //       title: '导航1',
+  //       num: 1,
+  //       childList: [
+  //         {
+  //           id: 1,
+  //           name: 'home',
+  //           icon: 'el-icon-location',
+  //           title: '导航1',
+  //           num: 1,
+  //           childList: []
+  //         }
+  //       ]
+  //     }
+  //   ])
+
+  //   return {
+  //     routerData
+  //   }
+  // }
 }
 </script>
 

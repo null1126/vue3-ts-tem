@@ -41,7 +41,7 @@ export interface IProjectConfig {
   sideBarWidth: number;
 
   /**
-   * @description 区域背景颜色
+   * @description 菜单背景颜色
    */
   sideBarBgc: string;
 
@@ -54,6 +54,16 @@ export interface IProjectConfig {
    * @description 底部背景颜色
    */
   footerBgc: string;
+
+  /**
+   * @description 菜单文字颜色
+   */
+  menuTextColor: string;
+  
+  /**
+   * @description 菜单被激活的文字颜色
+   */
+  menuActiveTextColor: string;
 
   /**
    * @description 是否显示logo
@@ -79,6 +89,11 @@ export interface IProjectConfig {
    * @description 菜单类型
    */
   menuType: MenuTypeEnum;
+
+  /**
+   * @description 是否只保持一个子菜单的展开
+   */
+  uniqueOpened: boolean;
 
   /**
    * @description 超时时间

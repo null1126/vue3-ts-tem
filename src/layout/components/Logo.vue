@@ -1,22 +1,23 @@
 <template>
-  <div class="Logo" :style="{ backgroundColor: appConfig.headerBgc }">
-    <el-image
+  <div class="Logo" :style="{ backgroundColor: appConfig.sideBarBgc }">
+    <!-- <el-image
       class="logo-img"
       src="https://static.ixiupet.com/uploads/allimg/160309/11-160309135341.jpg"
-    ></el-image>
+    ></el-image> -->
+    <i class="icon-ali icon-9"></i>
     <span v-if="!appConfig.menuFold">{{ appConfig.systemName }}</span>
   </div>
 </template>
 
 <script lang='ts'>
 import { defineComponent, computed } from 'vue'
-import { ElImage } from 'element-plus'
+// import { ElImage } from 'element-plus'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    ElImage
+    // ElImage
   },
   setup () {
     const store = useStore()
@@ -48,5 +49,9 @@ export default defineComponent({
   width: 32px;
   height: 32px;
   margin-right: 10px;
+}
+.icon-9{
+  font-size: 30px;
+  color: rgb(255, 72, 0);
 }
 </style>

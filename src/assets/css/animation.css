@@ -1,0 +1,42 @@
+@-webkit-keyframes rotate360 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate360 {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotate360 {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.rotate45 {
+  -webkit-transform: rotate(45deg);
+  /* for Chrome || Safari */
+  -moz-transform: rotate(45deg);
+  /* for Firefox */
+  -ms-transform: rotate(45deg);
+  /* for IE */
+  -o-transform: rotate(45deg);
+  /* for Opera */
+}
