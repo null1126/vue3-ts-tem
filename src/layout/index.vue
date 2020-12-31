@@ -39,10 +39,13 @@ export default defineComponent({
   },
   setup () {
     const store = useStore()
+    const html = window.document.getElementsByTagName('html')[0]
     // 获取系统配置
     const appConfig = computed(() => {
       return store.state.appConfig.ProjectConfig
     })
+    if (appConfig.value.grayMode) html.classList.add('grayMode')
+    if (appConfig.value.colorWeak) html.classList.add('colorWeak')
 
     return {
       appConfig

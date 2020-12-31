@@ -116,6 +116,34 @@
 
     <system-set-item>
       <template #key>
+        灰色模式
+      </template>
+      <template #value>
+        <el-switch
+        @change="changeAppConfig($event,'grayMode')"
+        v-model="appConfig.grayMode"
+        active-color="#13ce66"
+        inactive-color="#ff4949">
+        </el-switch>
+      </template>
+    </system-set-item>
+
+    <system-set-item>
+      <template #key>
+        色弱模式
+      </template>
+      <template #value>
+        <el-switch
+        @change="changeAppConfig($event,'colorWeak')"
+        v-model="appConfig.colorWeak"
+        active-color="#13ce66"
+        inactive-color="#ff4949">
+        </el-switch>
+      </template>
+    </system-set-item>
+
+    <system-set-item>
+      <template #key>
         显示Logo
       </template>
       <template #value>

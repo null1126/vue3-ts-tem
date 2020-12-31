@@ -1,5 +1,5 @@
 import { IProjectConfig } from '@/types/IProjectConfig'
-import { headerTypeEnum, MenuTypeEnum } from '@/enums/index'
+import { headerTypeEnum, MenuTypeEnum, LanguageEnum } from '@/enums/index'
 
 const ProjectConfig: IProjectConfig = {
     systemName: '聚云众电商',
@@ -9,6 +9,7 @@ const ProjectConfig: IProjectConfig = {
     fullContent: false,
     sideBarWidth: 200,
     themeColor: '#00FF8C',
+    language: LanguageEnum.CN,
     sideBarBgc: '#fff',
     headerBgc: '#EAF1ED',
     footerBgc: '#E9EFEF',

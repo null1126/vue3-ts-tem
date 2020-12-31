@@ -14,3 +14,10 @@ export const enum MenuTypeEnum {
     Left = "Left"
   }
 
+/**
+ * @description 语言
+ */
+export const enum LanguageEnum {
+  CN = "cn",
+  EN = "en"
+}

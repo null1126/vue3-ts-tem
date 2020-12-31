@@ -25,6 +25,13 @@ export const fullScreen = () => {
  * @param name 修改的名称
  */
 export const useChangeAppConfig = (e: string, name: string) => {
+  let html = window.document.getElementsByTagName('html')[0]
+  let specialArr = ['grayMode', 'colorWeak']
+  if(specialArr.indexOf(name) > -1 && e) {
+    html.classList.add(name)
+  } else {
+    html.className =''
+  }
   const obj: IChangeProjectConfig = {
     name: '',
     value: ''

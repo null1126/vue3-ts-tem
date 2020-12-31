@@ -1,5 +1,5 @@
 
-import { headerTypeEnum, MenuTypeEnum } from '@/enums/index'
+import { headerTypeEnum, MenuTypeEnum, LanguageEnum } from '@/enums/index'
 
 /**
  * @description 系统配置接口
@@ -29,6 +29,11 @@ export interface IProjectConfig {
    * @description 主题色
    */
   themeColor: string;
+
+  /**
+   * @description 语言
+   */
+  language: LanguageEnum;
   
   /**
    * @description 全屏显示主界面(不显示菜单,及顶部)

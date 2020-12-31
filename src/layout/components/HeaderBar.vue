@@ -5,8 +5,38 @@
       <i :class="icons" @click="changeAppConfig(!appConfig.menuFold, 'menuFold')"></i>
     </div>
     <div class="headerBar-reight box-x-end">
-      <i class="icon-ali icon-quanping" @click="handleFullScreen"></i>
-      <i class="icon-ali icon-shuaxin" @click="handleReload"></i>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>菜单搜索</template>
+        <i class="icon-ali icon-sousuo" @click="handleFullScreen"></i>
+      </el-tooltip>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>锁定屏幕</template>
+        <i class="icon-ali icon-suo" @click="handleReload"></i>
+      </el-tooltip>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>消息通知</template>
+        <el-badge is-dot>
+          <i class="icon-ali icon-xiaoxi" @click="handleReload"></i>
+        </el-badge>
+      </el-tooltip>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>更换主题</template>
+        <i class="icon-ali icon-zhuti" @click="handleFullScreen"></i>
+      </el-tooltip>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>源码地址</template>
+        <i class="icon-ali icon-github" @click="handleReload"></i>
+      </el-tooltip>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>全屏显示</template>
+        <i class="icon-ali icon-quanping" @click="handleFullScreen"></i>
+      </el-tooltip>
+      <el-tooltip effect="dark" placement="bottom">
+        <template #content>刷新</template>
+        <i class="icon-ali icon-shuaxin" @click="handleReload"></i>
+      </el-tooltip>
+      <i class="icon-ali icon-zhongwenyuyan" :class="{'active':appConfig.language === 'cn'}" @click="changeAppConfig('cn', 'language')"></i>/
+      <i class="icon-ali icon-yingwenyuyan" :class="{'active':appConfig.language === 'en'}" @click="changeAppConfig('en', 'language')"></i>
       <el-image
         class="head-img"
         src="https://static.ixiupet.com/uploads/allimg/160309/11-160309135341.jpg">
@@ -17,20 +47,20 @@
 </template>
 
 <script lang='ts'>
-import { ElImage } from 'element-plus'
+import { ElImage, ElTooltip, ElBadge } from 'element-plus'
 import { computed, inject } from 'vue'
 import { useStore } from 'vuex'
 import { fullScreen, useChangeAppConfig } from '@/hooks/useSystemSet'
 
 export default {
   name: 'Header',
-  // inject: ['reload'],
   components: {
-    ElImage
+    ElImage,
+    ElBadge,
+    ElTooltip
   },
   setup () {
     const store = useStore()
-    // 获取系统配置
     const appConfig = computed(() => {
       return store.state.appConfig.ProjectConfig
     })
@@ -72,8 +102,8 @@ export default {
   line-height: 100%;
 }
 .head-img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin: 0 10px;
   border-radius: 50%;
 }

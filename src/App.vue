@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view v-if="ISReload" />
-
     <!-- 系统设置 -->
     <i class="icon-system-fixed el-icon-s-tools" @click="drawer = true"></i>
     <el-drawer
