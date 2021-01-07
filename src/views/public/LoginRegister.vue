@@ -1,6 +1,6 @@
 <template>
   <div class="LoginRegister">
-
+     我是登录注册页面 我要全屏
   </div>
 </template>
 

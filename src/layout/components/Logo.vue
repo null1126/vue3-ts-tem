@@ -5,7 +5,7 @@
       src="https://static.ixiupet.com/uploads/allimg/160309/11-160309135341.jpg"
     ></el-image> -->
     <i class="icon-ali icon-9"></i>
-    <span v-if="!appConfig.menuFold">{{ appConfig.systemName }}</span>
+    <span v-show="!appConfig.menuFold">{{ appConfig.systemName }}</span>
   </div>
 </template>
 

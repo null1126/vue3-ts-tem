@@ -13,7 +13,8 @@
       <div class="layout-main">
          <!-- 不固定头部 -->
         <header-bar v-if="!appConfig.headerFixed"></header-bar>
-        <div style="height:1000px"></div>
+        <!-- <div style="height:1000px"></div> -->
+        <router-view></router-view>
       </div>
       </el-scrollbar>
       <footer-bar v-if="appConfig.showFooter"></footer-bar>

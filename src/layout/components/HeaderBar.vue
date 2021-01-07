@@ -11,7 +11,7 @@
       </el-tooltip>
       <el-tooltip effect="dark" placement="bottom">
         <template #content>锁定屏幕</template>
-        <i class="icon-ali icon-suo" @click="handleReload"></i>
+        <i class="icon-ali icon-suo" @click="handleLock"></i>
       </el-tooltip>
       <el-tooltip effect="dark" placement="bottom">
         <template #content>消息通知</template>
@@ -25,7 +25,7 @@
       </el-tooltip>
       <el-tooltip effect="dark" placement="bottom">
         <template #content>源码地址</template>
-        <i class="icon-ali icon-github" @click="handleReload"></i>
+        <a target="_blank" href="https://github.com/null1126/vue3-ts-tem/tree/master"><i class="icon-ali icon-github" @click="handleReload"></i></a>
       </el-tooltip>
       <el-tooltip effect="dark" placement="bottom">
         <template #content>全屏显示</template>
@@ -50,6 +50,7 @@
 import { ElImage, ElTooltip, ElBadge } from 'element-plus'
 import { computed, inject } from 'vue'
 import { useStore } from 'vuex'
+import axios from 'axios'
 import { fullScreen, useChangeAppConfig } from '@/hooks/useSystemSet'
 
 export default {
@@ -70,6 +71,11 @@ export default {
     const reloads = inject<Function>('reload')
     const handleReload = () => reloads && reloads()
 
+    const handleLock = async () => {
+      const res = await axios.get('/api/articles') // 解构赋值
+      console.log(res)
+    }
+
     const changeAppConfig = (e: string, name: string) => useChangeAppConfig(e, name)
 
     const icons = computed(() => {
@@ -85,6 +91,7 @@ export default {
       icons,
       handleReload,
       changeAppConfig,
+      handleLock,
       handleFullScreen
     }
   }

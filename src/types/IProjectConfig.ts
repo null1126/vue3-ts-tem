@@ -229,6 +229,10 @@ export interface IRoutersConfig{
    */
   title: string,
   /**
+   * @description 跳转的路由
+   */
+  path: string,
+  /**
    * @description 路由序号
    */
   num: number,
