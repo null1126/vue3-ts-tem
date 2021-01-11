@@ -21,3 +21,13 @@ export const enum LanguageEnum {
   CN = "cn",
   EN = "en"
 }
+
+/**
+ * @description 路由过渡动画
+ */
+export const enum RouterTransitionEnum {
+  slideTop = "slide-top",
+  slideBottom = "slide-bottom",
+  slideRight = "slide-right",
+  slideLeft = "slide-left"
+}

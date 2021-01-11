@@ -17,6 +17,7 @@
     "mitt": "^2.1.0",
     "mockjs": "^1.1.0",
     "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
     "screenfull": "^5.1.0",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
@@ -25,6 +26,7 @@
     "vuex-persistedstate": "^4.0.0-beta.1"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",

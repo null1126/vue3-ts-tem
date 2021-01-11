@@ -1,5 +1,5 @@
 
-import { headerTypeEnum, MenuTypeEnum, LanguageEnum } from '@/enums/index'
+import { headerTypeEnum, MenuTypeEnum, LanguageEnum, RouterTransitionEnum } from '@/enums/index'
 
 /**
  * @description 系统配置接口
@@ -220,24 +220,64 @@ export interface IRoutersConfig{
    * @description 路由名称
    */
   name: string,
+  
   /**
-   * @description 路由icon
+   * @description 路由
    */
-  icon: string,
+  path: string,
+
+  /**
+   * @description 当前路由参数配置
+   */
+  meta: IRoutersMetaConfig,
+
+  /**
+   * @description 路由组件地址
+   */
+  component: string,
+  
+  /**
+   * @description 子级路由
+   */
+  children: IRoutersConfig[]
+}
+
+/**
+ * @description 当前路由参数配置
+ */
+export interface IRoutersMetaConfig {
   /**
    * @description 路由标题
    */
   title: string,
+
   /**
-   * @description 跳转的路由
+   * @description 路由icon
    */
-  path: string,
+  icon: string,
+  
+  /**
+   * @description 缓存路由
+   */
+  cache: boolean,
+
+  /**
+   * @description 隐藏路由
+   */
+  hidden: boolean,
+
+  /**
+   * @description 外链路由
+   */
+  outerLink: boolean,
+
+  /**
+   * @description 路由过度动画
+   */
+  transition: RouterTransitionEnum,
+
   /**
    * @description 路由序号
    */
-  num: number,
-  /**
-   * @description 子路由
-   */
-  childList: IRoutersConfig[]
+  serialNumber: number,
 }

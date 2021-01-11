@@ -6,6 +6,8 @@ import 'element-plus/lib/theme-chalk/index.css';
 import 'normalize.css/normalize.css'
 import '@/assets/css/global.less'
 import './assets/icon/iconfont.css'
+
+import 'nprogress/nprogress.css'
 import i18n from '../src/language/i18n'
 const app = createApp(App)
 

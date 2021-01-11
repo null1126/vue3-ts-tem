@@ -25,6 +25,7 @@ import SideItem from './SideItem.vue'
 import { useStore } from 'vuex'
 import { computed, reactive } from 'vue'
 import { IRoutersConfig } from '@/types/IProjectConfig'
+import { RouterTransitionEnum } from '@/enums/index'
 type IRoutersConfigs = IRoutersConfig[]
 
 export default {
@@ -56,58 +57,51 @@ export default {
       {
         id: 1,
         name: 'home',
-        icon: 'el-icon-location',
-        title: '首页',
         path: '/home',
-        num: 1,
-        childList: [
+        meta: {
+          title: '首页000',
+          icon: 'el-icon-location',
+          cache: false,
+          hidden: false,
+          outerLink: false,
+          transition: RouterTransitionEnum.slideLeft,
+          serialNumber: 0
+        },
+        component: '',
+        children: [
           {
             id: 4,
-            name: 'home',
-            icon: 'el-icon-location',
-            title: '首页',
+            name: 'homes',
+            meta: {
+              title: '首页001',
+              icon: 'el-icon-location',
+              cache: false,
+              hidden: true,
+              outerLink: false,
+              transition: RouterTransitionEnum.slideLeft,
+              serialNumber: 0
+            },
             path: '/home',
-            num: 1,
-            childList: []
-          },
-          {
-            id: 10,
-            name: 'home',
-            icon: 'el-icon-location',
-            title: '导航3',
-            path: '/home20',
-            num: 1,
-            childList: []
-          }
-        ]
-      },
-      {
-        id: 2,
-        name: 'home1',
-        icon: 'el-icon-location',
-        title: '导航4',
-        path: '/home5',
-        num: 1,
-        childList: [
-          {
-            id: 3,
-            name: 'home',
-            icon: 'el-icon-location',
-            title: '导航5',
-            path: '/home3',
-            num: 1,
-            childList: []
+            component: '',
+            children: []
           }
         ]
       },
       {
         id: 10,
         name: 'home11',
-        icon: 'el-icon-location',
-        title: '导航4',
+        meta: {
+          title: '首页003',
+          icon: 'el-icon-location',
+          cache: false,
+          hidden: false,
+          outerLink: false,
+          transition: RouterTransitionEnum.slideLeft,
+          serialNumber: 0
+        },
         path: '/home51',
-        num: 1,
-        childList: []
+        component: '',
+        children: []
       }
     ])
 

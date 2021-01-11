@@ -13,5 +13,7 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-
+.Home{
+  background: cadetblue;
+}
 </style>

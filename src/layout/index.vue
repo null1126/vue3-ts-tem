@@ -14,7 +14,11 @@
          <!-- 不固定头部 -->
         <header-bar v-if="!appConfig.headerFixed"></header-bar>
         <!-- <div style="height:1000px"></div> -->
-        <router-view></router-view>
+        <router-view v-slot="{ Component, route }">
+          <transition :name="route.meta.transition || 'slide-right'">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </div>
       </el-scrollbar>
       <footer-bar v-if="appConfig.showFooter"></footer-bar>

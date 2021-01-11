@@ -5,19 +5,19 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'layout',
-    meta: { title: '', noCache: true },
+    meta: { title: '', cache: false, hidden: false, outerLink: false, transition: 'slide-right' },
     component: Layout,
     children: [
       {
         path: '/home',
         name: 'home',
-        meta: { title: '首页', noCache: true },
+        meta: { title: '首页', cache: false, hidden: false, outerLink: false, transition: 'slide-right' },
         component: () => import('@/views/home/index.vue'), 
       },
       {
         path: '/404',
         name: '404',
-        meta: { title: '404', noCache: true },
+        meta: { title: '404', cache: false, hidden: false, outerLink: false, transition: 'slide-right' },
         component: () => import('@/views/public/404.vue')
       },
       {
@@ -29,7 +29,7 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/LoginRegister',
     name: 'LoginRegister',
-    meta: { title: '登录/注册', noCache: true },
+    meta: { title: '登录/注册', cache: false, hidden: false, outerLink: false, transition: 'slide-right' },
     component: () => import('@/views/public/LoginRegister.vue')
   }
 ]
