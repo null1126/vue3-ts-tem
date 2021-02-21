@@ -14,14 +14,14 @@ const mutations = {
 }
 // getters
 const getters = {
-  getAppConfig: (state:any) => {
+  getAppConfig: (state: any) => {
     return state.ProjectConfig
   }
 }
 // actions
 const actions = {
   // 改变系统状态
-  changeProjectConfig(context:any, data:any) {
+  changeProjectConfig(context: any, data: any) {
     context.commit('CHANGEPROJECTCONFIG', data)
   }
 }

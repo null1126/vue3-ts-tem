@@ -13,7 +13,6 @@
       <div class="layout-main">
          <!-- 不固定头部 -->
         <header-bar v-if="!appConfig.headerFixed"></header-bar>
-        <!-- <div style="height:1000px"></div> -->
         <router-view v-slot="{ Component, route }">
           <transition :name="route.meta.transition || 'slide-right'">
             <component :is="Component" />

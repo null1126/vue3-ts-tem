@@ -1,9 +1,15 @@
 <template>
     <el-menu-item v-if="item && item.children.length === 0" :index="item.path">
-      <div>
+      <template v-if="!item.meta.outerLink">
         <i :class="item.meta.icon"></i>
         <span>{{ item.meta.title }}</span>
-      </div>
+      </template>
+      <template v-else>
+        <a :href="item.path" target="_blank" rel="noopener noreferrer">
+          <i :class="item.meta.icon"></i>
+          <span>{{ item.meta.title }}</span>
+        </a>
+      </template>
     </el-menu-item>
 
     <el-submenu v-else :index="item.path">
@@ -25,11 +31,17 @@
 <script lang="ts">
 import { ElSubmenu, ElMenuItem } from 'element-plus'
 import { IRoutersConfig } from '@/types/IProjectConfig'
+import { useStore } from 'vuex'
+import { PropType, computed } from 'vue'
+interface Props {
+  item: IRoutersConfig;
+}
 export default {
   name: 'SideItem',
   props: {
     item: {
-      type: Object
+      type: Object as PropType<IRoutersConfig>,
+      required: true
     }
   },
   components: {
@@ -37,14 +49,14 @@ export default {
     ElMenuItem
   },
   setup () {
-    const filterMenu = (item: IRoutersConfig[]) => {
-      item.filter((items) => {
-        return items.meta.hidden
-      })
-    }
+    const store = useStore()
+    // 获取系统配置
+    const appConfig = computed(() => {
+      return store.state.appConfig.ProjectConfig
+    })
 
     return {
-      filterMenu
+      appConfig
     }
   }
 }

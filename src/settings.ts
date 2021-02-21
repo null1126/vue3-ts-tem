@@ -2,7 +2,7 @@ import { IProjectConfig } from '@/types/IProjectConfig'
 import { headerTypeEnum, MenuTypeEnum, LanguageEnum } from '@/enums/index'
 
 const ProjectConfig: IProjectConfig = {
-    systemName: '聚云众电商',
+    systemName: 'admin',
     showSettingButton: true,
     grayMode: false,
     colorWeak: false,
